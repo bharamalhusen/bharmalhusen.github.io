@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Husen Bharmal – Resume</title>
+    <meta name="description" content="Husen Bharmal – Senior React Native Developer with 7+ years of experience building cross-platform mobile applications.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e3a5f;
+            --primary-light: #2a5a8f;
+            --text-dark: #1a1a1a;
+            --text-medium: #2d2d2d;
+            --text-light: #5a5a5a;
+            --bg-light: #f5f7fa;
+            --bg-white: #ffffff;
+            --border: #d0d5dd;
+            --accent: #0a66c2;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #e8ecf1;
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .resume {
+            width: 210mm;
+            max-width: 100%;
+            margin: 20px auto;
+            background: var(--bg-white);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            padding: 40px 48px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding-bottom: 28px;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 28px;
+        }
+
+        .header h1 {
+            font-family: 'EB Garamond', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-medium);
+            margin-bottom: 12px;
+        }
+
+        .header .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .header .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .header .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-item svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--primary);
+            flex-shrink: 0;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 26px;
+        }
+
+        .section-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 14px;
+        }
+
+        /* Experience Snapshot */
+        .snapshot {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 6px;
+        }
+
+        .snapshot-item {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 12px 16px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .snapshot-item .label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-light);
+            letter-spacing: 0.5px;
+        }
+
+        .snapshot-item .value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'EB Garamond', serif;
+        }
+
+        .snapshot-item .detail {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        /* Profile */
+        .profile-text {
+            font-size: 13.5px;
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        .profile-text strong {
+            color: var(--primary);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 24px;
+        }
+
+        .skill-row {
+            display: flex;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: var(--primary);
+            min-width: 140px;
+            flex-shrink: 0;
+        }
+
+        .skill-values {
+            color: var(--text-medium);
+        }
+
+        /* Work Experience */
+        .job {
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-white);
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .job-company {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .job-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .job-meta .duration {
+            background: var(--bg-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .job ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job ul li {
+            font-size: 13px;
+            color: var(--text-medium);
+            padding: 3px 0;
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .job ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .project-card {
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-light);
+        }
+
+        .project-card h4 {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .project-card p {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Education */
+        .education-item {
+            padding: 12px 0;
+        }
+
+        .education-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .education-item .institution {
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .education-item .year {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Languages */
+        .languages-list {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .language-tag {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 6px 18px;
+            font-size: 13px;
+            color: var(--text-medium);
+        }
+
+        .language-tag strong {
+            color: var(--primary);
+        }
+
+        /* Floating Action Buttons */
+        .fab-panel {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .fab-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background 0.2s;
+            text-decoration: none;
+        }
+
+        .fab-btn:hover {
+            transform: scale(1.1);
+            background: var(--primary-light);
+        }
+
+        .fab-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .fab-btn.github {
+            background: #333;
+        }
+
+        .fab-btn.github:hover {
+            background: #555;
+        }
+
+        .fab-btn.email-btn {
+            background: #ea4335;
+        }
+
+        .fab-btn.email-btn:hover {
+            background: #f55a4e;
+        }
+
+        /* Tooltip */
+        .fab-btn::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 58px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .fab-btn:hover::after {
+            opacity: 1;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .resume {
+                width: 100%;
+                margin: 0;
+                padding: 8mm 10mm;
+                box-shadow: none;
+            }
+
+            .fab-panel {
+                display: none !important;
+            }
+
+            .job {
+                break-inside: avoid;
+            }
+
+            .project-card {
+                break-inside: avoid;
+            }
+
+            .section {
+                break-inside: avoid;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .resume {
+                width: 100%;
+                margin: 0;
+                padding: 20px 16px;
+                border-radius: 0;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .header .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .snapshot {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .job-header {
+                flex-direction: column;
+            }
+
+            .fab-panel {
+                bottom: 12px;
+                right: 12px;
+            }
+
+            .fab-btn {
+                width: 42px;
+                height: 42px;
+            }
+
+            .fab-btn::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume">
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Husen Bharmal</h1>
+        <div class="subtitle">Senior Software Developer</div>
+        <div class="contact-info">
+            <span class="contact-item">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Surat, Gujarat, India
+            </span>
+            <span class="contact-item">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="mailto:bharmalhusen@gmail.com">bharmalhusen@gmail.com</a>
+            </span>
+            <span class="contact-item">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <a href="https://github.com/bharmalhusen" target="_blank">github.com/bharmalhusen</a>
+            </span>
+        </div>
+    </header>
+
+    <!-- Experience Snapshot -->
+    <section class="section">
+        <h2 class="section-title">Experience Snapshot</h2>
+        <div class="snapshot">
+            <div class="snapshot-item">
+                <div class="label">Total Experience</div>
+                <div class="value" id="total-exp">8+ Years</div>
+                <div class="detail">Since July 2017</div>
+            </div>
+            <div class="snapshot-item">
+                <div class="label">React Native</div>
+                <div class="value" id="rn-exp">5+ Years</div>
+                <div class="detail">Since March 2020</div>
+            </div>
+            <div class="snapshot-item">
+                <div class="label">Android Native</div>
+                <div class="value">2.5+ Years</div>
+                <div class="detail">July 2017 – March 2020</div>
+            </div>
+            <div class="snapshot-item">
+                <div class="label">Current Role</div>
+                <div class="value">Logicwind</div>
+                <div class="detail">Since March 2020</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile -->
+    <section class="section">
+        <h2 class="section-title">Profile</h2>
+        <p class="profile-text">
+            React Native Developer with <strong>7+ years</strong> of experience building and maintaining cross-platform applications for
+            <strong>Android, iOS, Android TV, and tvOS</strong>. Strong hands-on experience with REST API integration,
+            authentication flows, push notifications, and performance optimization. Extensive background in
+            <strong>Android native development</strong>, including lifecycle management, background tasks, notifications, and debugging
+            platform-specific issues. Comfortable working across JavaScript and native Android layers to resolve real-world
+            production problems. Experienced in shipping and maintaining production applications while collaborating closely
+            with backend, QA, and product teams.
+        </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-row">
+                <span class="skill-category">Mobile</span>
+                <span class="skill-values">React Native, Android</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-category">Languages</span>
+                <span class="skill-values">JavaScript (ES6+), TypeScript, Kotlin, Java</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-category">State & Navigation</span>
+                <span class="skill-values">React Hooks, React Navigation</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-category">APIs & Auth</span>
+                <span class="skill-values">RESTful APIs, JSON, JWT Authentication</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-category">Services</span>
+                <span class="skill-values">Firebase (Push Notifications, Analytics)</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-category">Tools</span>
+                <span class="skill-values">Git, Android Studio, VS Code</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-category">Other</span>
+                <span class="skill-values">Performance Optimization, Debugging, App Deployment</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="section">
+        <h2 class="section-title">Work Experience</h2>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">React Native Developer</span> – <span class="job-company">Logicwind</span>
+                </div>
+            </div>
+            <div class="job-meta">
+                March 2020 – Present | Surat, Gujarat
+                <span class="duration" id="logicwind-duration"></span>
+            </div>
+            <ul>
+                <li>Built and maintained cross-platform mobile applications using React Native for Android and iOS.</li>
+                <li>Integrated secure RESTful APIs and implemented authentication flows using JWT.</li>
+                <li>Developed feed-based screens, profile modules, and reusable UI components.</li>
+                <li>Implemented Firebase push notifications and real-time updates.</li>
+                <li>Optimized app performance, memory usage, and rendering for production releases.</li>
+                <li>Collaborated with backend, QA, and design teams to ensure stable and scalable releases.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-title">Software Engineer</span> – <span class="job-company">Softices</span>
+                </div>
+            </div>
+            <div class="job-meta">
+                July 2017 – March 2020 | Surat, Gujarat
+                <span class="duration">2 yrs 8 mos</span>
+            </div>
+            <ul>
+                <li>Developed Android applications with location-based services and real-time features.</li>
+                <li>Worked with Firebase Cloud Messaging for local and push notifications.</li>
+                <li>Integrated Google Maps APIs and third-party SDKs.</li>
+                <li>Consumed REST APIs and handled JSON/XML data parsing.</li>
+                <li>Used Git and SVN for version control in collaborative environments.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section">
+        <h2 class="section-title">Key Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h4>Conservative Media Platform</h4>
+                <p>React Native app for news and video content. Content feeds, article readers, video playback, API integration, authentication, and Firebase notifications.</p>
+            </div>
+            <div class="project-card">
+                <h4>Nonprofit Advocacy Platform</h4>
+                <p>Media-driven application for community engagement. Secure login, REST API integration, content feeds, and performance optimizations.</p>
+            </div>
+            <div class="project-card">
+                <h4>Music Band Fan Engagement App</h4>
+                <p>Social media platform for direct fan interaction. Messaging features, profile screens, and real-time content updates.</p>
+            </div>
+            <div class="project-card">
+                <h4>News Commentary Platform</h4>
+                <p>Mobile features including article feeds, video content, commenting, and notifications using React Native and Firebase.</p>
+            </div>
+            <div class="project-card">
+                <h4>Car Subscription Service App</h4>
+                <p>Subscription-based vehicle rental platform. Booking flows, authentication, form validations, and API-driven data handling.</p>
+            </div>
+            <div class="project-card">
+                <h4>AppsOnAir</h4>
+                <p>Developer-focused mobile platform. OTA update flows, deep linking, authentication handling, and API-based configuration management.</p>
+            </div>
+            <div class="project-card">
+                <h4>Community Advocacy Platform</h4>
+                <p>Social networking app for community discussions. Content feeds, profile screens, notifications, and API-based data synchronization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="education-item">
+            <h4>Bachelor of Engineering (Computer Science)</h4>
+            <div class="institution">Sanjaybhai Rajguru College of Engineering</div>
+            <div class="year">2013 – 2017</div>
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="section">
+        <h2 class="section-title">Languages</h2>
+        <div class="languages-list">
+            <span class="language-tag"><strong>Gujarati</strong> – Native</span>
+            <span class="language-tag"><strong>Hindi</strong> – Professional</span>
+            <span class="language-tag"><strong>English</strong> – Professional</span>
+        </div>
+    </section>
+
+</div>
+
+<!-- Floating Action Buttons -->
+<div class="fab-panel">
+    <button class="fab-btn" data-tooltip="Print / Save PDF" onclick="window.print()">
+        <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+    </button>
+    <a class="fab-btn email-btn" data-tooltip="Email Me" href="mailto:bharmalhusen@gmail.com">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+    <a class="fab-btn github" data-tooltip="GitHub Profile" href="https://github.com/bharmalhusen" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+</div>
+
+<script>
+    // Dynamically calculate durations
+    function calcDuration(startYear, startMonth, endDate) {
+        const end = endDate || new Date();
+        const start = new Date(startYear, startMonth - 1);
+        let years = end.getFullYear() - start.getFullYear();
+        let months = end.getMonth() - start.getMonth();
+        if (months < 0) { years--; months += 12; }
+        let parts = [];
+        if (years > 0) parts.push(years + ' yr' + (years > 1 ? 's' : ''));
+        if (months > 0) parts.push(months + ' mo' + (months > 1 ? 's' : ''));
+        return parts.join(' ') || '< 1 mo';
+    }
+
+    // Logicwind duration (March 2020 - Present)
+    document.getElementById('logicwind-duration').textContent = calcDuration(2020, 3);
+
+    // Total experience
+    const totalYears = new Date().getFullYear() - 2017;
+    document.getElementById('total-exp').textContent = totalYears + '+ Years';
+
+    // React Native experience
+    const rnYears = new Date().getFullYear() - 2020;
+    document.getElementById('rn-exp').textContent = rnYears + '+ Years';
+</script>
+
+</body>
+</html>
